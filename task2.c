@@ -6,8 +6,9 @@ int main(){
 	while (scanf("%i",&A[i])==1){
 		i++;
 	}
-	int evenSum;
+	int evenSum = 0;
 	int oddSum;
+	int x;
 	for (x = 0;x < i;x++){
 		if (A[x] % 2 == 0){
 			evenSum += A[x];
@@ -16,16 +17,15 @@ int main(){
 			oddSum += A[x];
 		}
 	}
-	printf("test");
 	if (evenSum > oddSum){
-		printf("Largest sum: even");
+		printf("Largest sum: even\n");
 	}
 	else if(evenSum < oddSum){
-		printf("Largest sum: odd");
+		printf("Largest sum: odd\n");
 	}
 	else{
-		printf("Largest sum: same sum");
+		printf("Largest sum: same sum\n");
 	}
-	printf("test22");
+	printf("even: %d, odd: %d",evenSum,oddSum);
 	return 0;
 }
