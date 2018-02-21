@@ -16,6 +16,16 @@ int main(){
 			oddSum += A[x];
 		}
 	}
-	
+	printf("test");
+	if (evenSum > oddSum){
+		printf("Largest sum: even");
+	}
+	else if(evenSum < oddSum){
+		printf("Largest sum: odd");
+	}
+	else{
+		printf("Largest sum: same sum");
+	}
+	printf("test22");
 	return 0;
 }
