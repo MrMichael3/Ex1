@@ -26,6 +26,5 @@ int main(){
 	else{
 		printf("Largest sum: same sum\n");
 	}
-	printf("even: %d, odd: %d",evenSum,oddSum);
 	return 0;
 }
