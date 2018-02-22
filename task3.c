@@ -2,22 +2,37 @@
 #include <stdio.h>
 int isPrime(int a){
 	int x;
-	for(x=2;x < a;x++){
-		if (a%x == 0){
+	int y = 1;
+	for(x=2;y != 0 && x < a ;x++){
+		/*if (a%x == 0){
 			return 0;
 		}
-	return 1;
+	return 1;*/
+		y= a%x;
 	}
 	
-	return 0;
+	return y;
 }
 int main(){
 	int A[100];
+	int allPrime[100];
 	int i;
-	while(scanf("%i",A[i]==1)){
+	int x;
+	int primeCounter = 0;
+	while(scanf("%i",&A[i])){
 		i++;
 	}
-	
-	
+	int prime;
+	for (x=0;x<i;x++){
+		prime = isPrime(A[x]);
+		if (prime){
+			allPrime[primeCounter] = A[x];
+			primeCounter++;
+		}
+	}
+	printf("Prime numbers: ");
+	for(x=0;x<primeCounter;x++){
+		printf("%d ",allPrime[x]);
+	}	
 	return 0;
 }
