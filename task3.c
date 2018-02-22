@@ -3,6 +3,9 @@
 int isPrime(int a){
 	int x;
 	int y = 1;
+	if(a == 0 || a == 1){
+		return 0;
+	}
 	for(x=2;y != 0 && x < a ;x++){
 		/*if (a%x == 0){
 			return 0;
