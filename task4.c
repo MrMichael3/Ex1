@@ -27,14 +27,32 @@ int compare(char a, char b){
 	}
 }
 void bubblesort(char a[],int n){
-	
+	int x = 0;
+	char temp;
+	int counter = 0;
+	while(counter <= n){
+		while (x < n){
+			int change = compare(a[x],a[x+1]);
+			//change two elements
+			if (change == 1){
+				temp = a[x];
+				a[x] = a[x+1];
+				a[x+1] = temp;
+			}
+			x++;
+		}
+		counter++;
+}
 }
 int main(){
-	char a = 'z';
-	char b = 'z';
-	int check = compare(a,b);
-	printf("%c,%c : check: %d",a,b,check);
-
-	
+	char A[100];
+	char sorted[100];
+	int i;
+	printf("Type a string: ");
+	while(scanf("%i",&A[i])){
+		i++;
+	}
+	bubblesort(A,i);
+	printf("Sorted string: %c",A);
 	return 0;
 }
