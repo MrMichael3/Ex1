@@ -1,5 +1,6 @@
 //Michael Küchler, 16-924-318
 #include <stdio.h>
+#include <string.h>
 
 int compare(char a, char b){
 	// both uppercase or both lowercase
@@ -27,21 +28,20 @@ int compare(char a, char b){
 	}
 }
 void bubblesort(char a[],int n){
-	int x = 0;
 	char temp;
-	int counter = 0;
-	while(counter <= n){
-		while (x < n){
-			int change = compare(a[x],a[x+1]);
+	int i;
+	int j;
+	
+	for(i = n-1;i > 0;i--){
+		printf("äussere schlaufe\n");
+		for(j = 0;j < i;j++){
 			//change two elements
-			if (change == 1){
-				temp = a[x];
-				a[x] = a[x+1];
-				a[x+1] = temp;
+			if (compare(a[j],a[j+1] == 1)){
+				temp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
 			}
-			x++;
 		}
-		counter++;
 }
 }
 int main(){
@@ -49,10 +49,10 @@ int main(){
 	char sorted[100];
 	int i;
 	printf("Type a string: ");
-	while(scanf("%i",&A[i])){
-		i++;
-	}
+	scanf("%s",A);
+	i = strlen(A);
+	printf("%s,%d \n",A,i); //delete this
 	bubblesort(A,i);
-	printf("Sorted string: %c",A);
+	printf("Sorted string: %s",A);
 	return 0;
 }
