@@ -35,16 +35,41 @@ void bubblesort(char a[],int n){
 				a[j+1] = temp;
 			}
 		}
+	}	
 }
+int isAnagram(char a[],char b[]){
+	int x;
+	bubblesort(a,strlen(a));
+	bubblesort(b,strlen(b));
+	for(x=0;x<strlen(a);x++){
+		if(a[x]!=b[x]){
+			return 0;
+		}
+	}
+	return 1;
 }
 int main(){
+	// a)
 	char A[100];
-	char sorted[100];
 	int i;
 	printf("Type a string: ");
 	scanf("%s",A);
 	i = strlen(A);
 	bubblesort(A,i);
-	printf("Sorted string: %s",A);
+	printf("Sorted string: %s\n",A);
+	
+	//b)
+	char first[100];
+	char second[100];
+	printf("Enter the first string: \n");
+	scanf("%s",first);
+	printf("Enter the second string: \n");
+	scanf("%s",second);
+	if(isAnagram(first,second)){
+		printf("Is Anagram: True");
+	}
+	else{
+		printf("Is Anagram: False");
+	}
 	return 0;
 }
